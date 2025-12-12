@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Abrazaderas de alambre RH - Contacto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="page-contacto">
+
+<nav class="navbar">
+  <div class="container navbar-inner">
+    <div class="navbar-left">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo Abrazaderas RH" class="navbar-logo">
+      </a>
+      <div>
+        <a href="index.html" class="navbar-brand">Abrazaderas de alambre RH</a>
+        <div class="navbar-sub">Mercedes, Buenos Aires, Argentina</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="productos.html" class="nav-link">Productos</a>
+      <a href="como-comprar.html" class="nav-link">Cómo comprar</a>
+      <a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a>
+      <a href="contacto.html" class="nav-link active">Contacto</a>
+    </div>
+
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- CUADRO ÚNICO DE CONTACTO -->
+  <section class="card contact-card">
+    <h1 class="hero-title">
+      Contacto mayorista
+    </h1>
+
+    <p class="info-texto" style="text-align: center;">
+      Escribinos por consultas, pedidos por caja, medidas especiales,
+      envíos y precios.
+    </p>
+
+    <div class="contact-data-block">
+      <!-- DIRECCIÓN -->
+      <div class="contact-row">
+        <span class="contact-icon">📍</span>
+        <span class="contact-label">Dirección:</span>
+        <span class="contact-value">
+          Calle 15 N° 209, Mercedes, Buenos Aires
+        </span>
+        <button class="copy-btn"
+                type="button"
+                onclick="copiarTexto('Calle 15 N° 209, Mercedes, Buenos Aires')"
+                title="Copiar dirección">
+          <span class="copy-icon"></span>
+        </button>
+      </div>
+
+      <!-- TELÉFONO / WHATSAPP -->
+      <div class="contact-row">
+        <span class="contact-icon">💬</span>
+        <span class="contact-label">Teléfono / WhatsApp:</span>
+        <span class="contact-value">
+          <a href="https://wa.me/5491145575538" target="_blank" rel="noopener">
+            +54 11 4557 5538
+          </a>
+        </span>
+        <button class="copy-btn"
+                type="button"
+                onclick="copiarTexto('+54 11 4557 5538')"
+                title="Copiar teléfono">
+          <span class="copy-icon"></span>
+        </button>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="contact-row">
+        <span class="contact-icon">✉️</span>
+        <span class="contact-label">Email:</span>
+        <span class="contact-value">
+          <a href="mailto:AbrazaderasRH@gmail.com">AbrazaderasRH@gmail.com</a>
+        </span>
+        <button class="copy-btn"
+                type="button"
+                onclick="copiarTexto('AbrazaderasRH@gmail.com')"
+                title="Copiar email">
+          <span class="copy-icon"></span>
+        </button>
+      </div>
+
+      <!-- HORARIO -->
+      <div class="contact-row">
+        <span class="contact-icon">⏰</span>
+        <span class="contact-label">Horario de atención:</span>
+        <span class="contact-value">
+          De lunes a viernes (a coordinar por WhatsApp).
+        </span>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 22px;">
+      <a href="https://wa.me/5491145575538"
+         target="_blank"
+         rel="noopener"
+         class="btn-whatsapp">
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER (igual al resto del sitio) -->
+<footer>
+  <div class="footer-main">
+    <div class="container footer-inner">
+
+      <!-- LOGO GRANDE ARRIBA (SE OCULTA EN CELULAR) -->
+      <div class="footer-logo-side footer-logo-top">
+        <a href="index.html">
+          <img src="logoblanco.jpg" alt="Logo Abrazaderas RH">
+        </a>
+      </div>
+
+      <!-- COLUMNA 1: SOBRE LA EMPRESA -->
+      <div class="footer-column">
+        <h4>Sobre la empresa</h4>
+        <p>
+          Fabricamos abrazaderas de alambre galvanizado SAE 1010 desde hace más de 65 años,
+          con foco en venta por caja y por mayor para industria, línea blanca, plomería,
+          riego, automotriz y otros rubros.
+        </p>
+        <p class="footer-brand">Abrazaderas de alambre RH</p>
+      </div>
+
+      <!-- COLUMNA 2: DIRECCIÓN -->
+      <div class="footer-column">
+        <h4>Dirección</h4>
+        <p>Calle 15 N° 209 · Mercedes, Buenos Aires · Argentina</p>
+        <p>Teléfono / WhatsApp: +54 11 4557 5538</p>
+        <p>Email: AbrazaderasRH@gmail.com</p>
+      </div>
+
+      <!-- COLUMNA 3: MAPA DEL SITIO -->
+      <div class="footer-column">
+        <h4>Mapa del sitio</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="como-comprar.html">Cómo comprar</a></li>
+          <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- LOGO GRANDE ABAJO (SE VE TAMBIÉN EN CELULAR) -->
+      <div class="footer-logo-side footer-logo-bottom">
+        <a href="index.html">
+          <img src="logoblanco.jpg" alt="Logo Abrazaderas RH">
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      © 2025 Abrazaderas de alambre RH · Todos los derechos reservados
+    </div>
+  </div>
+</footer>
+
+<!-- JS copiar al portapapeles -->
+<script>
+  function copiarTexto(texto) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto)
+        .then(() => {
+          alert("Copiado al portapapeles.");
+        })
+        .catch(() => {
+          fallbackCopiar(texto);
+        });
+    } else {
+      fallbackCopiar(texto);
+    }
+  }
+
+  function fallbackCopiar(texto) {
+    const textarea = document.createElement("textarea");
+    textarea.value = texto;
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      alert("Copiado al portapapeles.");
+    } catch (e) {
+      alert("No se pudo copiar automáticamente. Copialo a mano.");
+    }
+    document.body.removeChild(textarea);
+  }
+</script>
+
+</body>
+</html>

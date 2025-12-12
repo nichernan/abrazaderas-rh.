@@ -1,0 +1,1950 @@
+/* -------------------
+   RESET BÁSICO
+   - Saca márgenes/paddings por defecto del navegador
+   - Activa box-sizing: border-box en todo (más fácil calcular anchos)
+------------------- */
+* {
+  box-sizing: border-box;  /* el ancho incluye padding y borde */
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%; /* para que el body pueda ocupar todo el alto */
+}
+
+body {
+  /* Fuente general del sitio (tipo "moderna" del sistema) */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Fondo con degradé radial celeste clarito */
+  background: radial-gradient(circle at top, #f7fbff 0, #e6ecff 40%, #dde4f7 100%);
+  color: #111827; /* texto principal gris muy oscuro (casi negro) */
+}
+
+/* CONTENEDOR GENERAL
+   - Limita el contenido al centro con un máximo de ancho
+   - Deja un poco de padding lateral
+*/
+.container {
+  max-width: 1100px;
+  margin: 0 auto;   /* centra horizontalmente */
+  padding: 0 16px;  /* espacio a los lados */
+}
+
+/* -------------------
+   NAVBAR (barra superior)
+------------------- */
+
+.navbar {
+  position: sticky;                  /* se queda pegada arriba al hacer scroll */
+  top: 0;
+  z-index: 50;                       /* por encima de otros elementos */
+  background: #ffffff;               /* fondo blanco */
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06); /* sombrita suave */
+}
+
+.navbar-inner {
+  display: flex;                     /* alinea logo + menú en una fila */
+  align-items: center;
+  justify-content: space-between;    /* espacio entre logo y links */
+  padding: 16px 0;
+}
+
+/* Contenedor logo + texto más juntito */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;                          /* separa un poco logo y texto */
+}
+
+/* Logo grande */
+.navbar-logo {
+  height: 82px;
+  width: auto;                       /* respeta proporciones de la imagen */
+}
+
+/* En pantallas chicas hago el logo un poco más chico */
+@media (max-width: 600px) {
+  .navbar-logo {
+    height: 64px;
+  }
+}
+
+/* Texto de marca (título) al lado del logo */
+.navbar-brand {
+  font-weight: 800;                  /* bien gruesa la letra */
+  font-size: 24px;
+  color: #111827;
+  text-decoration: none;             /* sin subrayado */
+}
+
+/* Subtítulo debajo o al lado de la marca, letra más chica y gris */
+.navbar-sub {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Contenedor de los links del menú principal */
+.nav-links {
+  display: flex;
+  gap: 12px;                         /* separación entre cada link */
+}
+
+/* Estilo de cada link del menú */
+.nav-link {
+  padding: 6px 18px;
+  border-radius: 999px;              /* forma de pastilla */
+  font-size: 14px;
+  text-decoration: none;
+  color: #4b5563;
+  background: transparent;
+  transition: all 0.15s ease;        /* anima cambios suaves en hover */
+}
+
+/* Hover: cambia fondo y color para feedback visual */
+.nav-link:hover {
+  background: rgba(148, 163, 184, 0.12);
+  color: #111827;
+}
+
+/* Link activo (página actual): pastilla verde con sombra */
+.nav-link.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+}
+
+/* -------------------
+   HERO / SLIDER (portada grande)
+------------------- */
+
+.hero {
+  margin: 28px 0;                    /* espacio arriba y abajo */
+}
+
+/* Título grande general que se usa en varias páginas */
+.hero-title {
+  font-size: 28px;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+/* Subtítulo debajo del título principal */
+.hero-subtitle {
+  font-size: 15px;
+  color: #4b5563;
+  max-width: 740px;
+  margin: 0 auto;                    /* centrado */
+}
+
+/* Texto genérico para párrafos informativos */
+.info-texto {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;                  /* interlineado más cómodo para leer */
+}
+
+/* Texto informativo centrado y con ancho máximo (productos hero) */
+.info-texto-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 6px;
+}
+
+/* Versión compacta con poco margen arriba/abajo */
+.info-texto-compact {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+/* Contenedor principal del slider/hero con imagen de fondo */
+.hero-slider .slider {
+  position: relative;
+  overflow: hidden;                  /* oculta lo que se salga del borde */
+  border-radius: 28px;
+  background: #020617;
+  color: #f9fafb;
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.25);
+}
+
+/* Pista que contiene todas las slides una al lado de la otra */
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease;   /* mueve las slides suavemente */
+}
+
+/* Cada slide del slider */
+.slide {
+  min-width: 100%;                   /* ocupa todo el ancho del slider */
+  position: relative;
+  height: 340px;
+}
+
+/* Imagen dentro de cada slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* recorta para llenar el espacio */
+  display: block;
+}
+
+/* Caja de texto (título + descripción) superpuesta a la imagen */
+.slide-caption {
+  position: absolute;
+  right: 10%;                        /* alejado del borde derecho */
+  top: 50%;
+  transform: translateY(-50%);       /* centro vertical */
+  max-width: 360px;
+  text-align: right;
+}
+
+.slide-caption h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.slide-caption p {
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+/* Flechas de navegación del slider (prev y next) */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;              /* botón circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.slider-arrow-prev {
+  left: 18px;
+}
+
+.slider-arrow-next {
+  right: 18px;
+}
+
+/* Puntitos de navegación del slider (indicadores de slide) */
+.slider-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(148, 163, 184, 0.7);
+  cursor: pointer;
+}
+
+/* Punto activo (slide actual) un poco más largo y verde */
+.slider-dot.active {
+  width: 18px;
+  background: #22c55e;
+}
+
+
+
+/* -------------------
+   TARJETAS GENERALES (cards blancas)
+------------------- */
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 22px 24px 26px;
+  box-shadow: 0 18px 30px rgba(148, 163, 184, 0.25);
+  margin-bottom: 24px;
+}
+
+/* Título dentro de las cards */
+.card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* -------------------
+   PRODUCTOS MÁS VENDIDOS (INICIO)
+------------------- */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas iguales */
+  gap: 16px;                                        /* espacio entre tarjetas */
+}
+
+/* Tarjeta de producto destacado en el inicio */
+.featured-item {
+  text-decoration: none;
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 10px 10px 14px;
+  box-shadow: 0 10px 18px rgba(148, 163, 184, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* Imagen de cada producto destacado */
+.featured-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;          /* muestra toda la abrazadera aunque sobre fondo */
+  object-position: center;
+  display: block;
+  border-radius: 14px;
+  background: #f5f5f5;          /* fondo gris clarito por si la foto tiene fondo transparente */
+}
+
+/* Nombre corto del producto destacado */
+.featured-item h3 {
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+/* Subtexto (por ejemplo, medida o info extra) */
+.featured-item span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Efecto al pasar el mouse: se levanta un poquito y aumenta la sombra */
+.featured-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 26px rgba(148, 163, 184, 0.35);
+}
+
+/* -------------------
+   SOBRE NOSOTROS (INICIO)
+------------------- */
+
+.about-icons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas */
+  gap: 18px;
+  margin-top: 6px;
+}
+
+/* Cada ítem con icono y texto */
+.about-item {
+  text-align: center;
+  padding: 10px 10px 4px;
+}
+
+/* Circulito con icono dentro (emoji, ícono, etc.) */
+.about-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 8px;
+  background: rgba(59, 130, 246, 0.08);
+  color: #1d4ed8;
+}
+
+/* Título corto de cada característica */
+.about-item h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* Texto descriptivo debajo del título */
+.about-item p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* -------------------
+   LISTADO DE PRODUCTOS (PRODUCTOS.HTML)
+------------------- */
+
+/* main de productos separado del navbar */
+.page-productos main.container {
+  margin-top: 20px;
+}
+
+/* Título hero específico de productos más chico y centrado */
+.page-productos .hero-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* Texto que resume cuántos productos hay, filtros aplicados, etc. */
+.productos-resumen {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Contenedor de los botones de filtro (por uso, por industria, etc.) */
+.productos-filtros {
+  display: flex;
+  flex-wrap: wrap;   /* pasa a varias filas si no entra todo */
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Estilo de cada botón de filtro */
+.productos-filtro-btn {
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  padding: 6px 14px;
+  font-size: 13px;
+  background: #f9fafb;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.productos-filtro-btn:hover {
+  background: #e5e7eb;
+}
+
+/* Filtro activo con fondo verde similar al menú */
+.productos-filtro-btn.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  border-color: #16a34a;
+  box-shadow: 0 8px 18px rgba(34, 197, 94, 0.35);
+}
+
+/* Grid general de tarjetas de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); /* se adapta a ancho disponible */
+  gap: 18px;
+  margin-top: 0;
+}
+
+/* Tarjeta de cada producto en la página de productos */
+.producto-card {
+  background: #f9fafb;
+  border-radius: 22px;
+  box-shadow: 0 18px 30px rgba(148, 163, 184, 0.35);
+  padding: 14px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  position: relative; /* para poder posicionar el badge "Más vendida" */
+}
+
+/* Contenedor de la imagen de producto */
+.producto-card-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 18px;
+  background-color: #e4dccd; /* tono tipo cartón/caja */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Imagen dentro de la tarjeta de producto */
+.producto-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Etiquetas de uso (plomería, línea blanca, etc.) */
+.producto-card-etiquetas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+/* Chip de etiqueta individual */
+.producto-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.08);
+  color: #1d4ed8;
+}
+
+/* Línea técnica, por ej: "Alambre SAE 1010 · Galvanizado" */
+.producto-card-tech {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+/* Variante sin margen extra (para listas compactas) */
+.producto-card-tech-tight {
+  margin-bottom: 0;
+}
+
+/* Contenedor de detalles técnicos (margen arriba) */
+.producto-card-detalle {
+  margin-top: 4px;
+}
+
+/* Versión alineada a la izquierda (para textos tipo listado) */
+.producto-card-detalle-left {
+  margin-top: 4px;
+  text-align: left;
+}
+
+/* Título principal del producto (nombre comercial) */
+.producto-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* Descripción corta de la tarjeta */
+.producto-card-text {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+/* Badge "Más vendida" en la esquina superior izquierda */
+.producto-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  box-shadow: 0 8px 16px rgba(248, 113, 113, 0.4);
+}
+
+/* Botón dentro de la tarjeta (por ejemplo, "Agregar al pedido") */
+.producto-card-btn {
+  margin-top: auto; /* empuja el botón hacia abajo para alinear alturas */
+}
+
+/* -------------------
+   BOTONES GENERALES REUTILIZABLES
+------------------- */
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+/* Botón pequeño (por ejemplo en links a PDF) */
+.btn-sm {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Botón principal violeta */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 12px 22px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 26px rgba(99, 102, 241, 0.5);
+}
+
+/* Botón secundario gris (en realidad violeta, igual al primary acá) */
+.btn-secondary {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 12px 22px rgba(99, 102, 241, 0.4);
+}
+
+/* Botón rojo (para acciones fuertes, eliminar, etc.) */
+.btn-danger {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* Utilidad para empujar botón hacia la derecha */
+.ml-auto {
+  margin-left: auto;
+}
+
+/* -------------------
+   CARRITO FLOTANTE + MODALES (BASE)
+------------------- */
+
+/* Botón flotante del carrito (icono que aparece abajo a la derecha) */
+.fab-carrito {
+  position: fixed;
+  right: 22px;
+  bottom: 26px;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+  display: none;             /* por defecto oculto, se muestra con JS */
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 20px 30px rgba(248, 113, 113, 0.45);
+  cursor: pointer;
+  z-index: 40;
+}
+
+/* Fondo oscuro detrás del modal del carrito */
+.carrito-backdrop {
+  position: fixed;
+  inset: 0;                  /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(15, 23, 42, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+/* Cuando tiene la clase visible, se muestra el overlay */
+.carrito-backdrop.visible {
+  display: flex;
+}
+
+/* Modal base (caja blanca del carrito / datos) */
+.carrito-modal {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 18px 20px 20px;
+  width: 430px;
+  max-width: 92vw;
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.35);
+}
+
+/* Versión más ancha del modal para datos de contacto */
+.carrito-modal-datos {
+  width: 720px;
+  max-width: 95vw;
+}
+
+/* Cabecera del modal: título + botón cerrar */
+.carrito-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.carrito-modal-header h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Botón "X" para cerrar el modal */
+.btn-cerrar-modal {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Item dentro del carrito (línea con nombre + cantidad) */
+.carrito-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* Controles para sumar/restar cantidad */
+.cantidad-controles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Botón + y - de cantidad */
+.btn-cantidad {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+/* Mensaje de carrito vacío */
+.carrito-vacio {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* Texto de total de cajas del pedido */
+.total-cajas {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* Formulario de datos del cliente dentro del modal "simple" */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas */
+  gap: 10px 14px;
+  margin-top: 8px;
+}
+
+/* Etiqueta de cada campo del formulario */
+.form-group label {
+  font-size: 13px;
+  color: #4b5563;
+  display: block;
+  margin-bottom: 3px;
+}
+
+/* Inputs y textarea del formulario base */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 7px 9px;
+  font-size: 13px;
+}
+
+/* Altura mínima del textarea */
+.form-group textarea {
+  min-height: 70px;
+  resize: vertical;  /* deja cambiar alto manualmente */
+}
+
+/* Asterisco rojo para indicar campo obligatorio */
+.requerido {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Botón verde para enviar el pedido por WhatsApp */
+.btn-whatsapp {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 20px;
+  background: #22c55e;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* -------------------
+   CONTACTO (CUADRO ÚNICO en inicio o páginas)
+------------------- */
+
+.contact-card {
+  text-align: center;
+  max-width: 520px;
+  margin: 26px auto 40px;
+  padding-top: 24px;
+  padding-bottom: 26px;
+}
+
+/* -------------------
+   FOOTER (pie de página)
+------------------- */
+
+footer {
+  margin-top: 40px;
+}
+
+.footer-main {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 26px 0 18px;
+}
+
+/* Fila principal del footer: logos laterales + columnas de info */
+.footer-logo-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo pequeño junto a las columnas (no el gigante de los costados) */
+.footer-logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Grid interno del footer:
+   5 columnas: 
+   - logo/brand izquierda
+   - texto empresa
+   - columnas de links / info
+   - logo/brand derecha
+*/
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 1.5fr 1.5fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Contenedor de los logos grandes de los costados */
+.footer-logo-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagen de los logos grandes laterales del footer */
+.footer-logo-side img {
+  width: 150px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* En pantallas chicas el footer pasa a columnas apiladas */
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-logo-side img {
+    width: 110px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Título de cada columna del footer ("Mapa del sitio", "Contacto", etc.) */
+.footer-column h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Párrafos de texto dentro del footer */
+.footer-column p {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+/* Nombre de la marca en el footer, un poco más marcado */
+.footer-brand {
+  margin-top: 6px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Lista de links del mapa del sitio */
+.footer-links {
+  list-style: none; /* sin viñetas */
+}
+
+.footer-links li {
+  margin-bottom: 4px;
+}
+
+/* Enlaces del footer */
+.footer-links a {
+  font-size: 13px;
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #e5e7eb;  /* se aclara al pasar el mouse */
+}
+
+/* Franja inferior del footer con copyright o texto legal */
+.footer-bottom {
+  background: #020617;
+  border-top: 1px solid #111827;
+  padding: 10px 0 14px;
+}
+
+/* Texto centrado chiquito del final */
+.footer-bottom-inner {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* -------------------
+   RESPONSIVE (adaptaciones a pantallas chicas)
+------------------- */
+
+@media (max-width: 768px) {
+  /* Navbar en columna cuando no entra todo en una fila */
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .hero-slider .slider {
+    border-radius: 18px;
+  }
+
+  .slide {
+    height: 260px;
+  }
+
+  .slide-caption {
+    max-width: 260px;
+    right: 6%;
+  }
+
+  /* En tablet: 2 columnas de productos destacados en vez de 4 */
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Iconos de "Sobre nosotros" en una sola columna */
+  .about-icons {
+    grid-template-columns: 1fr;
+  }
+
+  /* Formulario base en 2 columnas en pantallas medianas */
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Footer logos/columnas apilados y centrados */
+  .footer-logo-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 8px;
+  }
+
+  .footer-inner {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajuste extra del logo en pantallas muy chicas */
+@media (max-width: 600px) {
+  .navbar-logo {
+    height: 64px;
+  }
+}
+
+/* En móviles muy pequeños:
+   - Formulario de una sola columna
+   - Productos destacados de una sola columna
+   - Hero un poco más bajo
+*/
+@media (max-width: 480px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slide {
+    height: 230px;
+  }
+}
+
+/* Imagen especial para el Combo Ferretero
+   - Mantiene la proporción 4:3
+   - Centra la foto dentro de la tarjeta
+*/
+.producto-card-img.combo-ferretero {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px !important;
+}
+
+/* Foto del Combo Ferretero:
+   - La rota 90° (porque la foto original está vertical)
+   - La agranda un poco para llenar mejor el espacio
+*/
+.producto-card-img.combo-ferretero img {
+  transform: rotate(90deg) scale(1.4);
+  height: 110%;
+  width: auto;
+  object-fit: cover;
+}
+
+/* -------------------
+   PRODUCTOS: CARRITO WIZARD + BUSCADOR
+   (estilos específicos de productos.html)
+------------------- */
+
+/* Contenedor de buscador + guía (acordeones) */
+.productos-tools {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+/* Cada bloque de acordeón (buscador / guía) */
+.productos-accordion {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* Botón tipo "pastilla" de los acordeones de productos */
+.accordion-toggle-pill {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: 0 6px 10px rgba(148, 163, 184, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Icono izquierda del buscador (lupa) */
+.accordion-icon-left {
+  width: 18px;
+  text-align: left;
+  font-size: 15px;
+}
+
+/* Espaciador izquierdo en el acordeón de la guía */
+.accordion-spacer-left {
+  width: 16px;
+}
+
+/* Etiqueta centrada dentro de los botones de acordeón */
+.accordion-label {
+  flex: 1;
+  text-align: center;
+}
+
+/* Flechas de acordeón en productos */
+.page-productos .accordion-arrow {
+  text-align: right;
+  font-size: 12px;
+}
+
+/* Anchos específicos de flechas (para calzar el layout original) */
+.page-productos .arrow-wide {
+  width: 18px;
+}
+
+.page-productos .arrow-narrow {
+  width: 16px;
+}
+
+/* Paneles desplegables: Buscador y Guía
+   -> MISMOS ESTILOS PARA LOS DOS
+*/
+.panel-buscador,
+.panel-guia {
+  margin-top: 8px;
+  display: none;
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Label del buscador */
+.buscador-label {
+  font-size: 13px;
+  color: #111827;
+  display: block;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+/* Texto de ejemplos del buscador */
+.buscador-ejemplos {
+  font-size: 13px;
+  color: #4b5563;
+  margin: 0 0 6px 0;
+}
+
+/* Input del buscador */
+#buscadorMedidas {
+  border-radius: 999px;
+  border: 1px solid #111827;
+  padding: 8px 14px;
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+}
+
+/* Buscador por medida:
+   - Cambia el color del placeholder
+   - En foco marca el borde y un "glow" verde
+*/
+#buscadorMedidas::placeholder {
+  color: #6b7280;
+}
+
+#buscadorMedidas:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+}
+
+
+/* Lista numerada de la guía */
+.guia-lista {
+  margin-left: 18px;
+  margin-bottom: 6px;
+  padding-left: 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* Párrafo final de la guía */
+.guia-texto {
+  margin: 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+/* Link "escribinos" dentro de la guía */
+.guia-link-whatsapp {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.guia-link-whatsapp:hover {
+  text-decoration: underline;
+}
+
+
+/* Botón flotante del carrito en la página de productos
+   - Más grande y de color verde
+*/
+.page-productos .fab-carrito {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  border: none;
+  background: #4ade80; /* verde más claro */
+  box-shadow: 0 18px 35px rgba(34, 197, 94, 0.45);
+  display: none; /* se muestra solo si hay items (lo maneja JS) */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 60;
+  padding: 10px 6px 8px;
+}
+
+.page-productos .fab-carrito:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 40px rgba(34, 197, 94, 0.6);
+}
+
+/* Contenedor del ícono del carrito dentro del botón flotante */
+.page-productos .fab-cart-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* SVG del carrito (tamaño fijo) */
+.page-productos .fab-cart-svg {
+  width: 40px;
+  height: 40px;
+  stroke: #ffffff;
+  fill: none;
+}
+
+/* Número de cajas seleccionadas (contador) debajo del icono */
+.page-productos .fab-cart-count {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Backdrop específico del wizard de 4 pasos (similar al base) */
+.page-productos .carrito-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* Cuando está visible, se ve el overlay y el modal */
+.page-productos .carrito-backdrop.visible {
+  display: flex;
+}
+
+/* Modal principal del wizard (más grande y alto) */
+.page-productos .carrito-modal {
+  width: min(680px, 100% - 32px);
+  max-height: 88vh;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 24px 55px rgba(15, 23, 42, 0.45);
+  padding: 18px 20px 20px;
+  overflow-y: auto;  /* si se pasa de altura, aparece scroll */
+}
+
+/* Cabecera del modal del wizard con título y botón cerrar */
+.page-productos .carrito-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.page-productos .carrito-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Texto chico indicando en qué paso estás (ej: Paso 1 de 4) */
+.page-productos .carrito-paso-label {
+  margin: 2px 0 2px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Descripción corta de lo que se hace en ese paso */
+.page-productos .carrito-descripcion {
+  margin: 0 0 4px;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+/* Resumen en texto de lo que ya se eligió (entrega, pago, etc.) */
+.page-productos .carrito-resumen-elecciones {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Botón de cerrar (X) para el wizard, con fondo grisito */
+.page-productos .btn-cerrar-modal {
+  border: none;
+  background: #e5e7eb;
+  border-radius: 999px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.page-productos .btn-cerrar-modal:hover {
+  background: #d1d5db;
+}
+
+/* Cada "paso" del wizard
+   - Por ejemplo Paso 1: revisar productos, Paso 2: entrega, etc.
+*/
+.page-productos .paso-carrito {
+  display: none;
+}
+
+/* Solo el paso activo se muestra */
+.page-productos .paso-carrito.activo {
+  display: block;
+}
+
+/* Items del carrito en la versión wizard (un poco más chico el texto) */
+.page-productos .carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+
+/* Mensaje de carrito vacío en la página de productos */
+.page-productos .carrito-vacio {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0;
+}
+
+/* Controles de cantidad en el wizard */
+.page-productos .cantidad-controles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Botones + y - un poco más chicos y con borde */
+.page-productos .btn-cantidad {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+/* Total de cajas en el resumen del carrito */
+.page-productos .total-cajas {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Fila de botones debajo del total (siguiente, volver, vaciar, etc.) */
+.page-productos .carrito-botones-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Grid de tarjetas para elegir tipo de entrega y método de pago */
+.page-productos .opciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Tarjeta clickeable para cada opción de entrega/pago */
+.page-productos .opcion-card {
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+/* Título de la opción (ej: "Envío a todo el país") */
+.page-productos .opcion-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Hover de la tarjeta de opción */
+.page-productos .opcion-card:hover {
+  border-color: #22c55e;
+  box-shadow: 0 6px 14px rgba(34, 197, 94, 0.18);
+}
+
+/* Opción seleccionada con borde verde y fondo verdoso */
+.page-productos .opcion-card.seleccionada {
+  border-color: #22c55e;
+  background: #ecfdf3;
+}
+
+/* Fila final de botones del wizard (ej: "Volver", "Siguiente", "Enviar pedido") */
+.page-productos .carrito-footer-botones {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Formularios del Paso 4 (datos completos del cliente) */
+.page-productos .form-grid-2cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 16px;
+}
+
+.page-productos .form-group {
+  margin-bottom: 8px;
+}
+
+/* Etiquetas en la versión productos (texto apenas más oscuro) */
+.page-productos .form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: #374151;
+}
+
+/* Inputs y textareas en el wizard de productos */
+.page-productos .form-group input,
+.page-productos .form-group textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 7px 9px;
+  font-size: 13px;
+}
+
+/* Altura del textarea de aclaraciones en el wizard */
+.page-productos .form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ====== ERRORES DE FORMULARIO (PASO 4) ====== */
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.15);
+}
+
+.error-msg {
+  font-size: 12px;
+  color: #b91c1c;
+  margin-top: 4px;
+}
+
+/* Asterisco rojo de requerido en el wizard */
+.page-productos .requerido {
+  color: #ef4444;
+}
+
+/* Bloques dentro del paso 4 */
+.page-productos .bloque-seccion {
+  margin-top: 10px;
+  padding: 6px 0 10px;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* El primer bloque no lleva borde arriba */
+.page-productos .bloque-seccion:first-of-type {
+  border-top: none;
+}
+
+/* Título de cada bloque dentro del paso 4 */
+.page-productos .bloque-titulo {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 4px 0 3px;
+}
+
+/* Link tipo "Agregar datos de empresa" o similar */
+.page-productos .link-opcional {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #2563eb;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Texto de ayuda chiquito debajo de algunos campos */
+.page-productos .texto-ayuda {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Bloque escondido de empresa/factura */
+.bloque-empresa {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Botón de enviar por WhatsApp en el paso 4 (más ancho) */
+.page-productos .btn-whatsapp {
+  min-width: 190px;
+  width: auto;
+  margin-top: 0;
+}
+
+/* Bloque final de confirmación del pedido */
+.bloque-confirmacion {
+  margin-top: 16px;
+}
+
+/* Título del bloque de confirmación */
+.bloque-confirmacion-titulo {
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+/* -------------------
+   SOBRE NOSOTROS (HERO + ACORDEONES)
+   (estilos específicos de sobre-nosotros.html)
+------------------- */
+
+/* Margen general del hero de la página "Sobre nosotros" */
+.page-sobre-nosotros .about-hero {
+  margin: 26px 0 18px;
+}
+
+/* Caja grande con la foto de fábrica / equipo / etc. */
+.page-sobre-nosotros .about-hero-box {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  height: 310px;
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.25);
+}
+
+/* Imagen de fondo del hero "Sobre nosotros" */
+.page-sobre-nosotros .about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Capa superior (overlay) donde va el título y subtítulo */
+.page-sobre-nosotros .about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);    /* centra horizontalmente */
+  width: 100%;
+  height: 100%;
+  padding: 18px 6% 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+/* Título grande "Sobre Nosotros" con contorno blanco */
+.page-sobre-nosotros .about-hero-title {
+  font-size: 44px;
+  margin-bottom: 8px;
+  font-weight: 800;
+  -webkit-text-stroke: 1.2px #ffffff;  /* contorno blanco para que se lea sobre la foto */
+}
+
+/* Subtítulo debajo del título principal del hero */
+.page-sobre-nosotros .about-hero-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+}
+
+/* Acordeones "Más información" (Historia, Calidad, etc.) */
+.page-sobre-nosotros .accordion {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Cada ítem del acordeón ocupa mínimo 260px y luego crece */
+.page-sobre-nosotros .accordion-item {
+  flex: 1 1 0;
+  min-width: 260px;
+}
+
+/* Botón que abre/cierra el acordeón */
+.page-sobre-nosotros .accordion-toggle {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(148, 163, 184, 0.25);
+  transition: background 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
+}
+
+/* Hover del botón del acordeón */
+.page-sobre-nosotros .accordion-toggle:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(148, 163, 184, 0.35);
+}
+
+/* Icono + / X al final del acordeón */
+.page-sobre-nosotros .accordion-toggle .accordion-icon {
+  font-size: 16px;
+  transition: transform 0.12s ease;
+}
+
+/* Estado activo del acordeón: fondo violeta y texto blanco */
+.page-sobre-nosotros .accordion-toggle.active {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 16px 26px rgba(99, 102, 241, 0.5);
+}
+
+/* Cuando está activo, gira el signo + para que parezca una X */
+.page-sobre-nosotros .accordion-toggle.active .accordion-icon {
+  transform: rotate(45deg); /* el + pasa a ser una X suave */
+}
+
+/* Contenido desplegable del acordeón (texto detallado) */
+.page-sobre-nosotros .accordion-content {
+  display: none;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 14px 16px 12px;
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 6px;
+}
+
+/* Clase que muestra el contenido del acordeón */
+.page-sobre-nosotros .accordion-content.open {
+  display: block;
+}
+
+/* -------------------
+   CONTACTO (página contacto.html)
+------------------- */
+
+/* Card principal centrada con los datos de contacto */
+.page-contacto .contact-card {
+  max-width: 780px;
+  margin: 56px auto;
+  padding: 32px 48px 44px;
+}
+
+/* Bloque donde están los datos (teléfono, mail, dirección) */
+.page-contacto .contact-data-block {
+  margin-top: 18px;
+  text-align: left;
+}
+
+/* Una línea de datos de contacto: icono + texto + botón copiar */
+.page-contacto .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  justify-content: center;
+  flex-wrap: wrap; /* se adapta si queda poco espacio */
+}
+
+/* Icono de cada dato (emoji, ícono fontawesome, etc.) */
+.page-contacto .contact-icon {
+  font-size: 18px;
+}
+
+/* Etiqueta del dato (ej: "Teléfono:", "Email:") */
+.page-contacto .contact-label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Valor concreto del dato (número, dirección, etc.) */
+.page-contacto .contact-value {
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Enlaces dentro de los valores (por ejemplo, mailto: o link a WhatsApp) */
+.page-contacto .contact-value a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.page-contacto .contact-value a:hover {
+  text-decoration: underline;
+}
+
+/* Botón minimalista para copiar el dato al portapapeles */
+.page-contacto .copy-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ICONO DE COPIAR (dos hojitas superpuestas) */
+.page-contacto .copy-icon {
+  position: relative;
+  width: 16px;
+  height: 18px;
+  box-sizing: border-box;
+}
+
+/* Hoja de adelante (borde oscuro) */
+.page-contacto .copy-icon::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #111827;   /* negro/gris oscuro */
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* Hoja de atrás (borde gris clarito) */
+.page-contacto .copy-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 14px;
+  border: 2px solid #9ca3af;   /* gris clarito */
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+/* -------------------
+   CÓMO COMPRAR (página como-comprar.html)
+------------------- */
+
+/* Hero simple de la página "Cómo comprar" (sin fondo especial) */
+.page-como-comprar .hero {
+  margin: 10px 0 18px;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+}
+
+/* Título de la página "Cómo comprar" */
+.page-como-comprar .hero-title {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+/* Subtítulo explicando brevemente el proceso de compra */
+.page-como-comprar .hero-subtitle {
+  font-size: 15px;
+  color: #4b5563;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+/* Lista de pasos (1, 2, 3...) que explican cómo comprar */
+.page-como-comprar .pasos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+/* Cada paso: número circular + texto */
+.page-como-comprar .paso-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Circulito numerado (1, 2, 3...) */
+.page-como-comprar .paso-numero {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Título de cada paso "Elegí tus abrazaderas", etc. */
+.page-como-comprar .paso-titulo {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+/* Lista simple (viñetas) para explicar medios de pago y facturación */
+.page-como-comprar .lista-simple {
+  padding-left: 18px;
+}
+
+/* Bloque final que invita a escribir por WhatsApp para ayuda */
+.page-como-comprar .card-whatsapp-comprar {
+  text-align: center;
+}
+
+/* Párrafo explicativo dentro del bloque de WhatsApp */
+.page-como-comprar .card-whatsapp-comprar .info-texto {
+  margin-bottom: 14px;
+}
+
+/* ===== Ajuste HERO "Sobre nosotros" en CELULAR ===== */
+@media (max-width: 600px) {
+
+  /* Que la caja no fuerce una altura fija */
+  .page-sobre-nosotros .about-hero-box {
+    height: auto !important;
+  }
+
+  /* Que la imagen entre completa y no se recorte el texto */
+  .page-sobre-nosotros .about-hero-img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;   /* clave para que no corte */
+    background-color: #e6ecff;        /* relleno celestito si sobra espacio */
+  }
+
+  /* Bajamos un poco el tamaño del título y subtítulo del overlay */
+  .page-sobre-nosotros .about-hero-title {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .page-sobre-nosotros .about-hero-subtitle {
+    font-size: 15px;
+  }
+}
+/* ===== Ajustes slider de INICIO en celular ===== */
+@media (max-width: 480px) {
+
+  /* Hacemos el slide un poquito más alto */
+  .hero-slider .slide {
+    height: 280px;
+  }
+
+  /* Ajustamos el bloque de texto para que respire mejor */
+  .hero-slider .slide-caption {
+    right: 8%;
+    max-width: 260px;
+  }
+
+  /* Títulos un poco más chicos para que no se “corten” visualmente */
+  .hero-slider .slide-caption h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  /* Texto de abajo también un pelín más chico */
+  .hero-slider .slide-caption p {
+    font-size: 13px;
+  }
+}
+/* En pantallas chicas (celular) ocultamos el logo de arriba del footer */
+@media (max-width: 768px) {
+  .footer-logo-top {
+    display: none;
+  }
+  /* Por si acaso, nos aseguramos que el de abajo sí se vea */
+  .footer-logo-bottom {
+    display: block;
+  }
+}
+/* ✅ Ajustes SOLO para celular */
+@media (max-width: 768px) {
+
+  /* Si ya tenés lo del logo-top, dejalo acá junto */
+  .footer-logo-top {
+    display: none;          /* ocultar logo de arriba en celu */
+  }
+
+  .footer-inner {
+    flex-direction: column; /* columnas una debajo de la otra */
+    align-items: center;    /* centrar horizontalmente */
+  }
+
+  .footer-main {
+    text-align: center;     /* centra todos los textos del bloque oscuro */
+  }
+
+  .footer-column {
+    text-align: center;     /* títulos y párrafos centrados */
+    margin-bottom: 16px;
+  }
+
+  .footer-column h4,
+  .footer-column p,
+  .footer-column ul,
+  .footer-column li {
+    text-align: center;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 4px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+  }
+
+  /* Logo de abajo centrado */
+  .footer-logo-bottom img {
+    display: block;
+    margin: 0 auto 12px auto;
+  }
+}

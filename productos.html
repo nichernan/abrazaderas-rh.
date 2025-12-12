@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Abrazaderas de alambre RH - Productos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body class="page-productos">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="navbar-left">
+        <a href="index.html">
+          <img src="logo.png" alt="Logo Abrazaderas RH" class="navbar-logo">
+        </a>
+        <div>
+          <a href="index.html" class="navbar-brand">Abrazaderas de alambre RH</a>
+          <div class="navbar-sub">Mercedes, Buenos Aires, Argentina</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="productos.html" class="nav-link active">Productos</a>
+        <a href="como-comprar.html" class="nav-link">Cómo comprar</a>
+        <a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- LISTADO EN TARJETAS -->
+    <section class="card">
+      <!-- TÍTULO GENERAL DEL BLOQUE -->
+      <h1 class="hero-title">
+        Elegí la abrazadera que necesitás
+      </h1>
+      <p class="info-texto info-texto-center">
+        Todas las medidas se venden por caja. Podés combinar distintas medidas en un mismo pedido.
+      </p>
+      <p class="productos-resumen">
+        Mostrando 23 medidas disponibles: desde N° 6 hasta N° 70.
+      </p>
+
+      <!-- GUÍA + BUSCADOR EN LA MISMA FILA, COMO ACORDEÓN -->
+      <div class="productos-tools">
+
+        <!-- BLOQUE BUSCADOR (ACORDEÓN IZQUIERDA) -->
+        <div class="productos-accordion">
+          <button
+            type="button"
+            id="btnBuscador"
+            class="accordion-toggle-pill"
+            onclick="togglePanel('panelBuscador', this)"
+          >
+            <!-- icono lupa -->
+            <span class="accordion-icon-left">🔍</span>
+
+            <span class="accordion-label">
+              Buscar por N° o por medida (mm)
+            </span>
+
+            <span class="accordion-arrow arrow-wide">
+              ▼
+            </span>
+          </button>
+
+          <div
+            id="panelBuscador"
+            class="panel-buscador"
+          >
+            <label
+              for="buscadorMedidas"
+              class="buscador-label"
+            >
+              Escribí el número de abrazadera, las pulgadas o el rango en mm.
+            </label>
+
+            <p class="buscador-ejemplos">
+              Ejemplos: 12, 19–25, 1", sifón.
+            </p>
+
+            <input
+              type="text"
+              id="buscadorMedidas"
+              placeholder='Ej: "12", "19-25", "sifón"...'
+            >
+          </div>
+        </div>
+
+        <!-- GUÍA ¿CÓMO ELEGIR LA MEDIDA? (ACORDEÓN DERECHA) -->
+        <div class="productos-accordion">
+          <button
+            type="button"
+            id="btnGuia"
+            class="accordion-toggle-pill"
+            onclick="togglePanel('panelGuia', this)"
+          >
+            <span class="accordion-spacer-left"></span>
+            <span class="accordion-label">
+              ¿Cómo elegir la medida?
+            </span>
+            <span class="accordion-arrow arrow-narrow">▼</span>
+          </button>
+
+          <div
+            id="panelGuia"
+            class="panel-guia"
+          >
+            <ol class="guia-lista">
+              <li>Medí el diámetro exterior del caño o manguera.</li>
+              <li>Buscá una abrazadera cuyo rango en milímetros incluya ese diámetro.</li>
+              <li>Si dudás entre dos, elegí la que tenga un rango un poco más grande.</li>
+            </ol>
+
+            <p class="guia-texto">
+              Ante cualquier duda, 
+              <a href="https://wa.me/5491145575538" target="_blank" class="guia-link-whatsapp">
+                escribinos
+              </a>
+              y te ayudamos a elegir.
+            </p>
+            <a
+              href="file:///C:/Users/tanqu/Downloads/Especificaciones%20Tecnica%20abrazaderas%20rh%20(1).pdf"
+              target="_blank"
+              class="btn btn-primary btn-sm"
+            >
+              Especificaciones de las abrazaderas
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BLOQUE FILTROS -->
+      <div class="info-texto info-texto-compact">
+        <strong>Filtrar por grupo de medidas</strong><br>
+        Podés ver solo las medidas típicas de ferretería o separar en grandes, medianas y chicas.
+      </div>
+
+      <!-- FILTROS POR GRUPO -->
+      <div class="productos-filtros">
+        <button class="productos-filtro-btn active" data-filtro="todos">Todas</button>
+        <button class="productos-filtro-btn" data-filtro="ferreteria">Ferretería</button>
+        <button class="productos-filtro-btn" data-filtro="grandes">Grandes</button>
+        <button class="productos-filtro-btn" data-filtro="medianas">Medianas</button>
+        <button class="productos-filtro-btn" data-filtro="chicas">Chicas</button>
+      </div>
+
+      <!-- GRID DE PRODUCTOS -->
+      <div class="productos-grid">
+
+        <!-- NUEVO PRODUCTO: COMBO FERRETERO -->
+        <div class="producto-card" data-usos="ferreteria">
+          <div class="producto-card-img combo-ferretero">
+            <img src="comboferretero.jpg" alt="Combo Ferretero">
+          </div>
+
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Combo</span>
+          </div>
+
+          <h3 class="producto-card-title">Combo Ferretero</h3>
+
+          <div class="producto-card-detalle-left">
+            <p class="producto-card-tech producto-card-tech-tight">
+              Abrazadera N° 7 - 100 Unidades<br>
+              Abrazadera N° 12 - 100 Unidades<br>
+              Abrazadera N° 19 - 50 Unidades<br>
+              Abrazadera N° 25 - 50 Unidades<br>
+              Abrazadera N° 38/40 - 50 Unidades<br>
+              Abrazadera N° 50 - 50 Unidades
+            </p>
+          </div>
+
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(24, this)">Agregar caja</button>
+        </div>
+
+        <!-- CHICAS 6–16 -->
+        <div class="producto-card" data-usos="chicas">
+          <div class="producto-card-img">
+            <img src="imgabra6.jpg" alt="Abrazadera N° 6">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 6</h3>
+          <p class="producto-card-tech">Medida: 1/8"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 11–13 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 12,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 400</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(1, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="chicas,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra7.jpg" alt="Abrazadera N° 7">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 7</h3>
+          <p class="producto-card-tech">Medida: Gas</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 12–14 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 13,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 400</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(2, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="chicas">
+          <div class="producto-card-img">
+            <img src="imgabra8.jpg" alt="Abrazadera N° 8">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 8</h3>
+          <p class="producto-card-tech">&nbsp;</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 13–15 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 14,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 400</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(3, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="chicas">
+          <div class="producto-card-img">
+            <img src="imgabra10.jpg" alt="Abrazadera N° 10">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 10</h3>
+          <p class="producto-card-tech">&nbsp;</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 14–17 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 15,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 300</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(4, this)">Agregar caja</button>
+        </div>
+
+        <!-- 1/2" -->
+        <!-- 🔹 AQUÍ LE AGREGAMOS id="producto-12" -->
+        <div class="producto-card" id="producto-12" data-usos="chicas,ferreteria">
+          <div class="producto-badge">Más vendida</div>
+          <div class="producto-card-img">
+            <img src="imgabra12.jpg" alt="Abrazadera N° 12">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 12</h3>
+          <p class="producto-card-tech">Medida: 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 15–19 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 17,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 300</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(5, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="chicas">
+          <div class="producto-card-img">
+            <img src="imgabra14.jpg" alt="Abrazadera N° 14">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 14</h3>
+          <p class="producto-card-tech">Medida: 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 16–22 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 19,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 250</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(6, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="chicas">
+          <div class="producto-card-img">
+            <img src="imgabra16.jpg" alt="Abrazadera N° 16">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Chicas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 16</h3>
+          <p class="producto-card-tech">Medida: 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 17–23 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 20,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 250</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(7, this)">Agregar caja</button>
+        </div>
+
+        <!-- MEDIANAS 18–38/40 -->
+        <div class="producto-card" data-usos="medianas">
+          <div class="producto-badge">Más vendida</div>
+          <div class="producto-card-img">
+            <img src="imgabra18.jpg" alt="Abrazadera N° 18">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 18</h3>
+          <p class="producto-card-tech">Medida: 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 19–25 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 22,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 200</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(8, this)">Agregar caja</button>
+        </div>
+
+        <!-- 3/4" -->
+        <!-- 🔹 AQUÍ LE AGREGAMOS id="producto-19" -->
+        <div class="producto-card" id="producto-19" data-usos="medianas,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra19.jpg" alt="Abrazadera N° 19">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 19</h3>
+          <p class="producto-card-tech">Medida: 3/4"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 22–27 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 24,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 200</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(9, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="medianas">
+          <div class="producto-card-img">
+            <img src="imgabra20.jpg" alt="Abrazadera N° 20">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 20</h3>
+          <p class="producto-card-tech">Medida: 3/4"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 23–28 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 25,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 200</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(10, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="medianas">
+          <div class="producto-card-img">
+            <img src="imgabra22.jpg" alt="Abrazadera N° 22">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 22</h3>
+          <p class="producto-card-tech">Medida: 3/4"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 24–32 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 28,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 150</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(11, this)">Agregar caja</button>
+        </div>
+
+        <!-- 1" -->
+        <!-- 🔹 AQUÍ LE AGREGAMOS id="producto-25" -->
+        <div class="producto-card" id="producto-25" data-usos="medianas,ferreteria">
+          <div class="producto-badge">Más vendida</div>
+          <div class="producto-card-img">
+            <img src="imgabra25.jpg" alt="Abrazadera N° 25">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 25</h3>
+          <p class="producto-card-tech">Medida: 1"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 28–36 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 32,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 150</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(12, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="medianas">
+          <div class="producto-card-img">
+            <img src="imgabra28-30.jpg" alt="Abrazadera N° 28/30">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 28/30</h3>
+          <p class="producto-card-tech">Medida: 1"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 32–39 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 35,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(13, this)">Agregar caja</button>
+        </div>
+
+        <!-- 1 1/4" -->
+        <div class="producto-card" data-usos="medianas,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra32-35.jpg" alt="Abrazadera N° 32/35">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 32/35</h3>
+          <p class="producto-card-tech">Medida: 1 1/4"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 36–45 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 40,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(14, this)">Agregar caja</button>
+        </div>
+
+        <!-- 1 1/2" -->
+        <!-- 🔹 AQUÍ LE AGREGAMOS id="producto-38-40" -->
+        <div class="producto-card" id="producto-38-40" data-usos="medianas,ferreteria">
+          <div class="producto-badge">Más vendida</div>
+          <div class="producto-card-img">
+            <img src="imgabra38-40.jpg" alt="Abrazadera N° 38/40">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Medianas</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 38/40</h3>
+          <p class="producto-card-tech">Medida: 1 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 40–48 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 44,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(15, this)">Agregar caja</button>
+        </div>
+
+        <!-- GRANDES 42–70 -->
+        <div class="producto-card" data-usos="grandes">
+          <div class="producto-card-img">
+            <img src="imgabra42.jpg" alt="Abrazadera N° 42">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 42</h3>
+          <p class="producto-card-tech">Medida: 1 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 44–53 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 48,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(16, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="grandes">
+          <div class="producto-card-img">
+            <img src="imgabra45.jpg" alt="Abrazadera N° 45">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 45</h3>
+          <p class="producto-card-tech">&nbsp;</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 47–56 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 51,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(17, this)">Agregar caja</button>
+        </div>
+
+        <!-- SIFÓN -->
+        <div class="producto-card" data-usos="grandes,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra48.jpg" alt="Abrazadera N° 48">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 48</h3>
+          <p class="producto-card-tech">Medida: Sifón</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 51–57 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 54,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(18, this)">Agregar caja</button>
+        </div>
+
+        <!-- 2" -->
+        <div class="producto-card" data-usos="grandes">
+          <div class="producto-card-img">
+            <img src="imgabra50.jpg" alt="Abrazadera N° 50">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 50</h3>
+          <p class="producto-card-tech">Medida: 2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 52–58 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 55,0 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(19, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="grandes">
+          <div class="producto-card-img">
+            <img src="imgabra55.jpg" alt="Abrazadera N° 55">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 55</h3>
+          <p class="producto-card-tech">Medida: 2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 57–66 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 61,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(20, this)">Agregar caja</button>
+        </div>
+
+        <!-- 2 1/2" -->
+        <div class="producto-card" data-usos="grandes,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra60.jpg" alt="Abrazadera N° 60">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 60</h3>
+          <p class="producto-card-tech">Medida: 2 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 60–69 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 64,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(21, this)">Agregar caja</button>
+        </div>
+
+        <div class="producto-card" data-usos="grandes">
+          <div class="producto-card-img">
+            <img src="imgabra65.jpg" alt="Abrazadera N° 65">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 65</h3>
+          <p class="producto-card-tech">Medida: 2 1/2"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 65–74 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 69,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(22, this)">Agregar caja</button>
+        </div>
+
+        <!-- 3" -->
+        <div class="producto-card" data-usos="grandes,ferreteria">
+          <div class="producto-card-img">
+            <img src="imgabra70.jpg" alt="Abrazadera N° 70">
+          </div>
+          <div class="producto-card-etiquetas">
+            <span class="producto-tag">Grandes</span>
+          </div>
+          <h3 class="producto-card-title">Abrazadera N° 70</h3>
+          <p class="producto-card-tech">Medida: 3"</p>
+          <div class="producto-card-detalle">
+            <p class="producto-card-tech">Diámetro mín–máx: 68–77 mm</p>
+            <p class="producto-card-tech">Diámetro nominal: 72,5 mm</p>
+            <p class="producto-card-tech">Unidades por caja: 100</p>
+          </div>
+          <button class="btn btn-primary producto-card-btn" onclick="agregarAlCarrito(23, this)">Agregar caja</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTÓN FLOTANTE CARRITO -->
+  <button class="fab-carrito" id="fabCarrito" onclick="abrirCarrito()">
+    <div class="fab-cart-icon">
+      <svg viewBox="0 0 24 24" class="fab-cart-svg">
+        <path d="M3 5h2l2 9h10l2-6H8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        <circle cx="10" cy="19" r="1.7" stroke-width="2"></circle>
+        <circle cx="17" cy="19" r="1.7" stroke-width="2"></circle>
+      </svg>
+    </div>
+    <div class="fab-cart-count" id="fabCartCount">0</div>
+  </button>
+
+  <!-- MODAL CARRITO - WIZARD 4 PASOS -->
+  <div class="carrito-backdrop" id="backdropCarrito">
+    <div class="carrito-modal">
+      <div class="carrito-modal-header">
+        <div>
+          <h2 id="carritoTitulo">Carrito de pedido (cajas)</h2>
+          <p id="carritoPasoLabel" class="carrito-paso-label">Paso 1 de 4 · Carrito</p>
+        </div>
+        <button class="btn-cerrar-modal" onclick="cerrarCarrito()">×</button>
+      </div>
+
+      <p id="carritoDescripcion" class="carrito-descripcion">
+        Revisá las cajas de abrazaderas que agregaste antes de avanzar.
+      </p>
+      <p id="carritoResumenElecciones" class="carrito-resumen-elecciones"></p>
+
+      <!-- PASO 1: CARRITO -->
+      <div id="paso1" class="paso-carrito activo">
+        <div id="carrito-items">
+          <p class="carrito-vacio">Todavía no agregaste nada al carrito.</p>
+        </div>
+
+        <p class="total-cajas" id="carrito-total-cajas">Total de cajas: 0</p>
+
+        <div class="carrito-botones-row">
+          <button class="btn btn-secondary" onclick="cerrarCarrito()">Seguir agregando</button>
+          <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
+          <button class="btn btn-primary ml-auto" onclick="irAPaso(2)">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- PASO 2: TIPO DE ENTREGA -->
+      <div id="paso2" class="paso-carrito">
+        <p class="carrito-descripcion">
+          Elegí una opción para continuar.
+        </p>
+
+        <div class="opciones-grid">
+          <div class="opcion-card" id="opEntregaRetiro" onclick="seleccionarEntrega('retiro')">
+            <strong>Retirar en Mercedes</strong>
+            <span>Retiro en fábrica o punto de entrega en Mercedes, a coordinar por WhatsApp.</span>
+          </div>
+          <div class="opcion-card" id="opEntregaEnvio" onclick="seleccionarEntrega('envio')">
+            <strong>Envío a domicilio / transporte</strong>
+            <span>Envíos a todo el país mediante correo o transporte, según el pedido.</span>
+          </div>
+        </div>
+
+        <div class="carrito-footer-botones">
+          <button class="btn btn-secondary" type="button" onclick="irAPaso(1)">Volver al paso anterior</button>
+          <button class="btn btn-primary" type="button" id="btnPaso2Siguiente" onclick="irAPaso(3)" disabled>
+            Siguiente
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 3: MÉTODO DE PAGO -->
+      <div id="paso3" class="paso-carrito">
+        <p class="carrito-descripcion">
+          ¿Cómo querés pagar?
+        </p>
+
+        <div class="opciones-grid" id="contenedorOpcionesPago">
+          <!-- Se llenan según tipo de entrega -->
+        </div>
+
+        <div class="carrito-footer-botones">
+          <button class="btn btn-secondary" type="button" onclick="irAPaso(2)">Volver al paso anterior</button>
+          <button class="btn btn-primary" type="button" id="btnPaso3Siguiente" onclick="irAPaso(4)" disabled>
+            Siguiente
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 4: DATOS + ENVIAR -->
+      <div id="paso4" class="paso-carrito">
+
+        <!-- DATOS PRINCIPALES -->
+        <div class="bloque-seccion">
+          <div class="bloque-titulo">Datos principales</div>
+          <p class="texto-ayuda">Solo lo básico para coordinar el envío.</p>
+
+          <div class="form-grid-2cols">
+            <div class="form-group">
+              <label>Nombre y apellido <span class="requerido">*</span></label>
+              <input type="text" id="nombreApellido" placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+              <label>Teléfono / WhatsApp <span class="requerido">*</span></label>
+              <input type="text" id="telefono" placeholder="Ej: 11 1234 5678">
+            </div>
+            <div class="form-group">
+              <label>Localidad / Provincia <span class="requerido">*</span></label>
+              <input type="text" id="localidad" placeholder="Ej: Mercedes Buenos Aires">
+            </div>
+            <div class="form-group" id="grupoDireccion">
+              <label id="labelDireccion">Dirección completa <span class="requerido">*</span></label>
+              <input type="text" id="direccion" placeholder="Ej: Calle 15 N° 209, piso 2, dpto B">
+            </div>
+          </div>
+        </div>
+
+        <!-- DATOS DE EMPRESA / FACTURA (OPCIONAL) -->
+        <div class="bloque-seccion">
+          <div class="bloque-titulo">Datos de empresa / factura (opcional)</div>
+          <p class="texto-ayuda">Completalo solo si necesitás factura A o sos comercio.</p>
+
+          <button type="button" id="btnEmpresa" class="link-opcional" onclick="toggleEmpresa()">
+            ➕ Agregar datos de empresa / factura
+          </button>
+
+          <div id="bloqueEmpresa" class="bloque-empresa">
+            <div class="form-grid-2cols">
+              <div class="form-group">
+                <label>Nombre del comercio / empresa</label>
+                <input type="text" id="empresa" placeholder="Ej: Ferretería San Martín">
+              </div>
+              <div class="form-group">
+                <label>CUIT (si necesitás factura A)</label>
+                <input type="text" id="cuit" placeholder="Ej: 20-12345678-9">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="correo@ejemplo.com">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACLARACIONES -->
+        <div class="bloque-seccion">
+          <div class="bloque-titulo">Aclaraciones sobre el pedido</div>
+          <p class="texto-ayuda">Opcional: horarios para recibir, referencias de la dirección, etc.</p>
+          <div class="form-group">
+            <textarea id="aclaraciones" placeholder="Ej.: horarios para recibir, referencias de la dirección, datos extra del pedido."></textarea>
+          </div>
+        </div>
+
+        <!-- BLOQUE FINAL: TEXTO + BOTONES -->
+        <div class="bloque-confirmacion">
+          <h3 class="bloque-confirmacion-titulo">Confirmar tu pedido mayorista</h3>
+          <p class="texto-ayuda">
+            Revisá que los datos estén correctos y tocá el botón para confirmar tu pedido.
+            Tu pedido se enviará por email a AbrazaderasRH@gmail.com y en breve te contactaremos
+            para confirmar disponibilidad.
+          </p>
+
+          <div class="carrito-footer-botones">
+            <button class="btn btn-secondary" type="button" onclick="irAPaso(3)">Volver al paso anterior</button>
+            <button class="btn-whatsapp" type="button" onclick="enviarPedido()">
+              Confirmar pedido
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+      <div class="container footer-inner">
+
+        <!-- LOGO GRANDE ARRIBA (SE OCULTA EN CELULAR) -->
+        <div class="footer-logo-side footer-logo-top">
+          <a href="index.html">
+            <img src="logoblanco.jpg" alt="Logo Abrazaderas RH">
+          </a>
+        </div>
+
+
+        <!-- COLUMNA 1: SOBRE LA EMPRESA -->
+        <div class="footer-column">
+          <h4>Sobre la empresa</h4>
+          <p>
+            Fabricamos abrazaderas de alambre galvanizado SAE 1010 desde hace más de 65 años,
+            con foco en venta por caja y por mayor para industria, línea blanca, plomería,
+            riego, automotriz y otros rubros.
+          </p>
+          <p class="footer-brand">Abrazaderas de alambre RH</p>
+        </div>
+
+        <!-- COLUMNA 2: DIRECCIÓN -->
+        <div class="footer-column">
+          <h4>Dirección</h4>
+          <p>Calle 15 N° 209 · Mercedes, Buenos Aires · Argentina</p>
+          <p>Teléfono / WhatsApp: +54 11 4557 5538</p>
+          <p>Email: AbrazaderasRH@gmail.com</p>
+        </div>
+
+        <!-- COLUMNA 3: MAPA DEL SITIO -->
+        <div class="footer-column">
+          <h4>Mapa del sitio</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="como-comprar.html">Cómo comprar</a></li>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- LOGO GRANDE ABAJO (SE VE TAMBIÉN EN CELULAR) -->
+        <div class="footer-logo-side footer-logo-bottom">
+          <a href="index.html">
+            <img src="logoblanco.jpg" alt="Logo Abrazaderas RH">
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        © 2025 Abrazaderas de alambre RH · Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS CARRITO + FILTROS + BUSCADOR + ACORDEÓN -->
+  <script>
+    // 👉 Dejá tu URL real del Web App acá:
+    const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbypPRa28U3iUePQDZKGiG7iAspd43xBBarmPr6lyGoePuUiOG62AqCrjw6JHrVYG8IJeQ/exec";
+
+    // 🔹 Clave para guardar el carrito en localStorage
+    const STORAGE_KEY = "carritoRH";
+
+    const productos = [
+      { id: 1, nombre: "Abrazadera N° 6" },
+      { id: 2, nombre: "Abrazadera N° 7" },
+      { id: 3, nombre: "Abrazadera N° 8" },
+      { id: 4, nombre: "Abrazadera N° 10" },
+      { id: 5, nombre: "Abrazadera N° 12" },
+      { id: 6, nombre: "Abrazadera N° 14" },
+      { id: 7, nombre: "Abrazadera N° 16" },
+      { id: 8, nombre: "Abrazadera N° 18" },
+      { id: 9, nombre: "Abrazadera N° 19" },
+      { id: 10, nombre: "Abrazadera N° 20" },
+      { id: 11, nombre: "Abrazadera N° 22" },
+      { id: 12, nombre: "Abrazadera N° 25" },
+      { id: 13, nombre: "Abrazadera N° 28/30" },
+      { id: 14, nombre: "Abrazadera N° 32/35" },
+      { id: 15, nombre: "Abrazadera N° 38/40" },
+      { id: 16, nombre: "Abrazadera N° 42" },
+      { id: 17, nombre: "Abrazadera N° 45" },
+      { id: 18, nombre: "Abrazadera N° 48" },
+      { id: 19, nombre: "Abrazadera N° 50" },
+      { id: 20, nombre: "Abrazadera N° 55" },
+      { id: 21, nombre: "Abrazadera N° 60" },
+      { id: 22, nombre: "Abrazadera N° 65" },
+      { id: 23, nombre: "Abrazadera N° 70" },
+      { id: 24, nombre: "Combo Ferretero" }
+    ];
+
+    let carrito = [];
+    let currentPaso = 1;
+    let tipoEntrega = null;  // "retiro" o "envio"
+    let metodoPago = null;   // texto amigable
+
+    const fabCarrito        = document.getElementById("fabCarrito");
+    const fabCartCount      = document.getElementById("fabCartCount");
+    const backdropCarrito   = document.getElementById("backdropCarrito");
+    const contenedorCarrito = document.getElementById("carrito-items");
+    const totalCajasElem    = document.getElementById("carrito-total-cajas");
+
+    // ================================
+    //   LOCALSTORAGE: GUARDAR / CARGAR
+    // ================================
+    function guardarCarritoStorage() {
+      try {
+        const data = {
+          items: carrito,
+          tipoEntrega,
+          metodoPago
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {
+        console.error("No se pudo guardar el carrito en localStorage:", e);
+      }
+    }
+
+    function cargarCarritoStorage() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+
+        const data = JSON.parse(raw);
+
+        if (Array.isArray(data.items)) {
+          carrito = data.items;
+        }
+
+        if (data.tipoEntrega === "retiro" || data.tipoEntrega === "envio") {
+          tipoEntrega = data.tipoEntrega;
+        }
+
+        if (typeof data.metodoPago === "string") {
+          metodoPago = data.metodoPago;
+        }
+      } catch (e) {
+        console.error("No se pudo leer el carrito desde localStorage:", e);
+      }
+    }
+
+    function actualizarFab(totalCajas) {
+      if (!fabCarrito) return;
+
+      if (carrito.length > 0) {
+        fabCarrito.style.display = "flex";
+        if (typeof totalCajas === "number" && fabCartCount) {
+          fabCartCount.textContent = totalCajas;
+        }
+      } else {
+        fabCarrito.style.display = "none";
+        if (fabCartCount) fabCartCount.textContent = "0";
+      }
+    }
+
+    function agregarAlCarrito(idProducto, boton) {
+      const producto = productos.find(p => p.id === idProducto);
+      if (!producto) return;
+
+      const item = carrito.find(i => i.id === idProducto);
+      if (item) {
+        item.cantidad += 1;
+      } else {
+        carrito.push({ id: producto.id, nombre: producto.nombre, cantidad: 1 });
+      }
+
+      actualizarCarrito();
+
+      if (boton) {
+        const original = boton.textContent;
+        boton.textContent = "Agregada ✓";
+        boton.disabled = true;
+        setTimeout(() => {
+          boton.textContent = original;
+          boton.disabled = false;
+        }, 800);
+      }
+    }
+
+    function cambiarCantidad(idProducto, delta) {
+      const item = carrito.find(i => i.id === idProducto);
+      if (!item) return;
+
+      item.cantidad += delta;
+      if (item.cantidad <= 0) {
+        carrito = carrito.filter(i => i.id !== idProducto);
+      }
+
+      actualizarCarrito();
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      tipoEntrega = null;
+      metodoPago = null;
+      actualizarCarrito();       // esto también actualiza el FAB
+      localStorage.removeItem(STORAGE_KEY);
+    }
+
+    function actualizarCarrito() {
+      contenedorCarrito.innerHTML = "";
+
+      if (carrito.length === 0) {
+        contenedorCarrito.innerHTML =
+          '<p class="carrito-vacio">Todavía no agregaste nada al carrito.</p>';
+        totalCajasElem.textContent = "Total de cajas: 0";
+        actualizarFab(0);
+        guardarCarritoStorage();
+        return;
+      }
+
+      let total = 0;
+
+      carrito.forEach(item => {
+        total += item.cantidad;
+
+        const div = document.createElement("div");
+        div.className = "carrito-item";
+        div.innerHTML = `
+          <span>${item.nombre}</span>
+          <div class="cantidad-controles">
+            <button class="btn-cantidad" onclick="cambiarCantidad(${item.id}, -1)">-</button>
+            <span>${item.cantidad} caja(s)</span>
+            <button class="btn-cantidad" onclick="cambiarCantidad(${item.id}, 1)">+</button>
+          </div>
+        `;
+        contenedorCarrito.appendChild(div);
+      });
+
+      totalCajasElem.textContent = "Total de cajas: " + total;
+      actualizarFab(total);
+      guardarCarritoStorage();
+    }
+
+    function abrirCarrito() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío. Agregá al menos una medida.");
+        return;
+      }
+      currentPaso = 1;
+      irAPaso(1);
+      backdropCarrito.classList.add("visible");
+    }
+
+    function cerrarCarrito() {
+      backdropCarrito.classList.remove("visible");
+    }
+
+    function irAPaso(n) {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+      currentPaso = n;
+
+      const pasos = document.querySelectorAll(".paso-carrito");
+      pasos.forEach((p, idx) => {
+        p.classList.toggle("activo", idx === n - 1);
+      });
+
+      const tituloElem   = document.getElementById("carritoTitulo");
+      const pasoLabel    = document.getElementById("carritoPasoLabel");
+      const descripcion  = document.getElementById("carritoDescripcion");
+      const resumen      = document.getElementById("carritoResumenElecciones");
+      const grupoDir     = document.getElementById("grupoDireccion");
+      const labelDir     = document.getElementById("labelDireccion");
+
+      let tituloTxt  = "";
+      let pasoTxt    = "";
+      let descTxt    = "";
+      let resumenTxt = "";
+
+      if (n === 1) {
+        tituloTxt  = "Carrito de pedido (cajas)";
+        pasoTxt    = "Paso 1 de 4 · Carrito";
+        descTxt    = "Revisá las cajas de abrazaderas que agregaste antes de avanzar.";
+        resumenTxt = "";
+      } else if (n === 2) {
+        tituloTxt  = "¿Cómo querés recibir el pedido?";
+        pasoTxt    = "Paso 2 de 4 · Tipo de entrega";
+        descTxt    = "Elegí una opción para continuar.";
+        resumenTxt = "";
+      } else if (n === 3) {
+        tituloTxt = "¿Cómo querés pagar?";
+        pasoTxt   = "Paso 3 de 4 · Método de pago";
+        descTxt   = "Seleccioná el método que prefieras.";
+        resumenTxt = tipoEntrega
+          ? "Opción de entrega: " + (tipoEntrega === "retiro"
+              ? "Retirar en Mercedes."
+              : "Envío a domicilio / transporte.")
+          : "";
+        armarOpcionesPago();
+      } else if (n === 4) {
+        tituloTxt = "Datos del cliente / empresa";
+        pasoTxt   = "Paso 4 de 4 · Datos y envío del pedido";
+        descTxt   = "Completá estos datos para coordinar el pedido mayorista.";
+
+        const textoEntrega = tipoEntrega === "retiro"
+          ? "Opción elegida: <strong>retirar en Mercedes</strong>"
+          : "Opción elegida: <strong>envío a domicilio / transporte</strong>";
+
+        const textoPago = `Método de pago: <strong>${metodoPago || "A coordinar"}</strong>`;
+        resumenTxt = `${textoEntrega} · ${textoPago}`;
+
+        if (grupoDir && labelDir) {
+          if (tipoEntrega === "envio") {
+            grupoDir.style.display = "block";
+            labelDir.innerHTML = 'Dirección completa <span class="requerido">*</span>';
+          } else {
+            grupoDir.style.display = "none";
+          }
+        }
+      }
+
+      if (tituloElem)  tituloElem.textContent   = tituloTxt;
+      if (pasoLabel)   pasoLabel.textContent    = pasoTxt;
+      if (descripcion) descripcion.textContent  = descTxt;
+
+      if (resumen) {
+        if (n === 4) {
+          resumen.innerHTML = resumenTxt;
+        } else {
+          resumen.textContent = resumenTxt;
+        }
+      }
+    }
+
+    function seleccionarEntrega(valor) {
+      tipoEntrega = valor;
+
+      const retiro = document.getElementById("opEntregaRetiro");
+      const envio  = document.getElementById("opEntregaEnvio");
+
+      if (retiro) retiro.classList.toggle("seleccionada", valor === "retiro");
+      if (envio)  envio.classList.toggle("seleccionada", valor === "envio");
+
+      const btn = document.getElementById("btnPaso2Siguiente");
+      if (btn) btn.disabled = !valor;
+
+      guardarCarritoStorage();
+    }
+
+    function armarOpcionesPago() {
+      const cont = document.getElementById("contenedorOpcionesPago");
+      if (!cont) return;
+
+      cont.innerHTML = "";
+      const opciones = [];
+
+      if (tipoEntrega === "retiro") {
+        opciones.push({ id: "pagoEfectivo",  texto: "Efectivo al retirar" });
+        opciones.push({ id: "pagoTransfer",  texto: "Transferencia bancaria" });
+        opciones.push({ id: "pagoCoordinar", texto: "A coordinar" });
+      } else {
+        opciones.push({ id: "pagoTransfer",  texto: "Transferencia bancaria" });
+        opciones.push({ id: "pagoCoordinar", texto: "A coordinar" });
+      }
+
+      opciones.forEach(op => {
+        const div = document.createElement("div");
+        div.className = "opcion-card";
+        div.id = op.id;
+        div.innerHTML = `<strong>${op.texto}</strong>`;
+        div.onclick = () => seleccionarPago(op.texto, op.id);
+        cont.appendChild(div);
+      });
+
+      const btn = document.getElementById("btnPaso3Siguiente");
+      if (btn) btn.disabled = !metodoPago;
+    }
+
+    function seleccionarPago(texto, id) {
+      metodoPago = texto;
+
+      const cards = document.querySelectorAll("#contenedorOpcionesPago .opcion-card");
+      cards.forEach(c => c.classList.remove("seleccionada"));
+
+      const elegido = document.getElementById(id);
+      if (elegido) elegido.classList.add("seleccionada");
+
+      const btn = document.getElementById("btnPaso3Siguiente");
+      if (btn) btn.disabled = false;
+
+      guardarCarritoStorage();
+    }
+
+    function toggleEmpresa() {
+      const bloque = document.getElementById("bloqueEmpresa");
+      const btn = document.getElementById("btnEmpresa");
+      if (!bloque) return;
+
+      const visible = bloque.style.display === "block";
+      if (visible) {
+        bloque.style.display = "none";
+        if (btn) btn.textContent = "➕ Agregar datos de empresa / factura";
+      } else {
+        bloque.style.display = "block";
+        if (btn) btn.textContent = "➖ Ocultar datos de empresa / factura";
+      }
+    }
+
+    function generarNumeroPedido() {
+      const ahora = new Date();
+      const yyyy = ahora.getFullYear();
+      const mm   = String(ahora.getMonth() + 1).padStart(2, "0");
+      const dd   = String(ahora.getDate()).padStart(2, "0");
+      const hh   = String(ahora.getHours()).padStart(2, "0");
+      const mi   = String(ahora.getMinutes()).padStart(2, "0");
+      const ss   = String(ahora.getSeconds()).padStart(2, "0");
+      return `RH-${yyyy}${mm}${dd}-${hh}${mi}${ss}`;
+    }
+
+    // Helpers para Sheets / email
+    function calcularTotalCajas() {
+      return carrito.reduce((acc, item) => acc + item.cantidad, 0);
+    }
+
+    function armarDetalleCajasTexto() {
+      if (!carrito.length) return "";
+      return carrito
+        .map(item => `${item.nombre}: ${item.cantidad} caja(s)`)
+        .join(" | ");
+    }
+
+    // Envío al Apps Script (no-cors)
+    async function guardarPedidoEnSheets(datos) {
+      try {
+        await fetch(SHEET_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(datos)
+        });
+        console.log("Pedido enviado al servidor de planilla/email.");
+      } catch (err) {
+        console.error("Error al conectar con el servidor de pedidos:", err);
+      }
+    }
+
+    // --------- VALIDACIÓN DE FORMULARIO (PASO 4) ---------
+
+    function normalizarTexto(str) {
+      return (str || "").trim().replace(/\s+/g, " ");
+    }
+
+    function getOrCreateErrorElem(input) {
+      if (!input) return null;
+      const grupo = input.closest(".form-group");
+      if (!grupo) return null;
+
+      let span = grupo.querySelector(".error-msg");
+      if (!span) {
+        span = document.createElement("span");
+        span.className = "error-msg";
+        grupo.appendChild(span);
+      }
+      return span;
+    }
+
+    function limpiarError(input) {
+      if (!input) return;
+      input.classList.remove("input-error");
+      const span = getOrCreateErrorElem(input);
+      if (span) span.textContent = "";
+    }
+
+    function setError(input, mensaje) {
+      if (!input) return;
+      input.classList.add("input-error");
+      const span = getOrCreateErrorElem(input);
+      if (span) span.textContent = mensaje;
+    }
+
+    // Validación de CUIT con dígito verificador
+    function validarCUIT(cuitSoloDigitos) {
+      if (!/^\d{11}$/.test(cuitSoloDigitos)) return false;
+      const coef = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+      let suma = 0;
+      for (let i = 0; i < 10; i++) {
+        suma += parseInt(cuitSoloDigitos[i], 10) * coef[i];
+      }
+      let dv = 11 - (suma % 11);
+      if (dv === 11) dv = 0;
+      else if (dv === 10) dv = 9;
+      return dv === parseInt(cuitSoloDigitos[10], 10);
+    }
+
+    /**
+     * Valida todos los campos del Paso 4.
+     * Devuelve { esValido: boolean, datos: {...} }
+     */
+    function validarFormularioPaso4() {
+      let esValido = true;
+
+      const inputNombre   = document.getElementById("nombreApellido");
+      const inputTel      = document.getElementById("telefono");
+      const inputLoc      = document.getElementById("localidad");
+      const inputDir      = document.getElementById("direccion");
+      const inputEmpresa  = document.getElementById("empresa");
+      const inputCuit     = document.getElementById("cuit");
+      const inputEmail    = document.getElementById("email");
+      const inputAclara   = document.getElementById("aclaraciones");
+
+      // Limpio errores viejos
+      [inputNombre, inputTel, inputLoc, inputDir, inputEmpresa, inputCuit, inputEmail, inputAclara]
+        .forEach(limpiarError);
+
+      const datos = {
+        nombreApellido: "",
+        telefono: "",
+        localidad: "",
+        direccion: "",
+        empresa: "",
+        cuit: "",
+        email: "",
+        aclaraciones: ""
+      };
+
+      // --- Nombre y apellido (OBLIGATORIO) ---
+      if (inputNombre) {
+        let valor = normalizarTexto(inputNombre.value);
+        inputNombre.value = valor;
+        datos.nombreApellido = valor;
+
+        if (!valor) {
+          setError(inputNombre, "Ingresá tu nombre y apellido.");
+          esValido = false;
+        } else if (valor.length < 3 || valor.length > 80) {
+          setError(inputNombre, "El nombre debe tener entre 3 y 80 caracteres.");
+          esValido = false;
+        } else if (!/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$/.test(valor)) {
+          setError(inputNombre, "El nombre solo puede tener letras y espacios.");
+          esValido = false;
+        }
+      }
+
+      // --- Teléfono / WhatsApp (OBLIGATORIO) ---
+      if (inputTel) {
+        let valor = normalizarTexto(inputTel.value);
+        inputTel.value = valor;
+        datos.telefono = valor;
+
+        if (!valor) {
+          setError(inputTel, "Ingresá un teléfono.");
+          esValido = false;
+        } else if (!/^[0-9+\s]+$/.test(valor)) {
+          setError(inputTel, "El teléfono solo puede tener números.");
+          esValido = false;
+        } else {
+          const soloDigitos = valor.replace(/\D/g, "");
+          if (soloDigitos.length < 8) {
+            setError(inputTel, "El teléfono es demasiado corto.");
+            esValido = false;
+          } else if (soloDigitos.length > 15) {
+            setError(inputTel, "El teléfono es demasiado largo.");
+            esValido = false;
+          }
+        }
+      }
+
+      // --- Localidad / Provincia (OBLIGATORIO) ---
+      if (inputLoc) {
+        let valor = normalizarTexto(inputLoc.value);
+        inputLoc.value = valor;
+        datos.localidad = valor;
+
+        if (!valor) {
+          setError(inputLoc, "Ingresá la localidad y provincia.");
+          esValido = false;
+        } else if (valor.length < 3 || valor.length > 80) {
+          setError(inputLoc, "La localidad debe tener entre 3 y 80 caracteres.");
+          esValido = false;
+        } else if (!/^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$/.test(valor)) {
+          setError(inputLoc, "La localidad solo puede tener letras y espacios.");
+          esValido = false;
+        }
+      }
+
+      // --- Dirección completa (OBLIGATORIO SOLO SI HAY ENVÍO) ---
+      if (inputDir) {
+        let valor = normalizarTexto(inputDir.value);
+        inputDir.value = valor;
+
+        const regexDireccion = /^[A-Za-zÁÉÍÓÚÜÑaéíóúüñ0-9\s.,º°\-\/#]+$/;
+
+        if (tipoEntrega === "envio") {
+          if (!valor) {
+            setError(inputDir, "Ingresá la dirección completa.");
+            esValido = false;
+          } else if (valor.length < 5 || valor.length > 120) {
+            setError(inputDir, "La dirección debe tener entre 5 y 120 caracteres.");
+            esValido = false;
+          } else if (!regexDireccion.test(valor)) {
+            setError(
+              inputDir,
+              "La dirección solo puede incluir letras, números y ., º ° - / #."
+            );
+            esValido = false;
+          } else {
+            datos.direccion = valor;
+          }
+        } else {
+          // Retiro en Mercedes: no es obligatoria. Si la escriben, la validamos igual.
+          if (valor && !regexDireccion.test(valor)) {
+            setError(
+              inputDir,
+              "La dirección solo puede incluir letras, números y ., º ° - / #."
+            );
+            esValido = false;
+          } else {
+            datos.direccion = valor || "";
+          }
+        }
+      }
+
+      // --- Nombre comercio / empresa (OPCIONAL) ---
+      if (inputEmpresa) {
+        let valor = normalizarTexto(inputEmpresa.value);
+        inputEmpresa.value = valor;
+        datos.empresa = valor;
+
+        if (valor) {
+          if (valor.length < 2 || valor.length > 80) {
+            setError(inputEmpresa, "El nombre de la empresa debe tener entre 2 y 80 caracteres.");
+            esValido = false;
+          } else if (!/^[A-Za-zÁÉÍÓÚÜÑaéíóúüñ0-9\s&.,-]+$/.test(valor)) {
+            setError(
+              inputEmpresa,
+              "El nombre de la empresa solo puede tener letras, números y & . , -."
+            );
+            esValido = false;
+          }
+        }
+      }
+
+      // --- CUIT (OPCIONAL) ---
+      if (inputCuit) {
+        let valorOriginal = (inputCuit.value || "").trim();
+
+        // Dejo solo números, puntos y guiones en una versión "limpia"
+        let valorLimpio = valorOriginal.replace(/[^0-9.\-]/g, "");
+        inputCuit.value = valorLimpio;
+        datos.cuit = valorLimpio;
+
+        const soloDigitos = valorLimpio.replace(/\D/g, "");
+
+        // Si el usuario escribió ALGO en el campo...
+        if (valorOriginal) {
+          // 1) Si al limpiar se queda vacío, es porque puso solo cosas raras (letras, etc.)
+          if (!valorLimpio) {
+            setError(inputCuit, "El CUIT solo puede tener números, puntos y guiones.");
+            esValido = false;
+          }
+          // 2) Si no tiene exactamente 11 dígitos, error
+          else if (soloDigitos.length !== 11) {
+            setError(inputCuit, "El CUIT debe tener 11 números.");
+            esValido = false;
+          }
+          // 3) Si el dígito verificador no cierra, error
+          else if (!validarCUIT(soloDigitos)) {
+            setError(inputCuit, "El CUIT ingresado no es válido.");
+            esValido = false;
+          }
+        }
+      }
+
+      // --- Email (OPCIONAL) ---
+      if (inputEmail) {
+        let valor = normalizarTexto(inputEmail.value);
+        inputEmail.value = valor;
+        datos.email = valor;
+
+        if (valor) {
+          const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!regexEmail.test(valor)) {
+            setError(inputEmail, "Ingresá un email válido (o dejá el campo vacío).");
+            esValido = false;
+          }
+        }
+      }
+
+      // --- Aclaraciones (OPCIONAL) ---
+      if (inputAclara) {
+        let valor = (inputAclara.value || "").trim();
+        valor = valor.replace(/\s+/g, " ");
+        // Evitar HTML/scripts
+        valor = valor.replace(/[<>]/g, "");
+        inputAclara.value = valor;
+        datos.aclaraciones = valor;
+
+        if (valor.length > 1000) {
+          setError(inputAclara, "Las aclaraciones no pueden superar los 1000 caracteres.");
+          esValido = false;
+        }
+      }
+
+      return { esValido, datos };
+    }
+
+    // --------- ENVÍO DEL PEDIDO (USA VALIDACIÓN) ---------
+    async function enviarPedido() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      // ✅ Validar todos los campos del paso 4
+      const resultado = validarFormularioPaso4();
+      if (!resultado.esValido) {
+        // Hay errores: NO envío nada.
+        alert("Revisá los campos marcados en rojo.");
+        return;
+      }
+
+      const datosForm = resultado.datos;
+
+      const numeroPedido      = generarNumeroPedido();
+      const fechaHora         = new Date().toISOString().replace("T", " ").slice(0, 19);
+      const totalCajas        = calcularTotalCajas();
+      const detalleCajasTexto = armarDetalleCajasTexto();
+
+      const datosParaSheets = {
+        fechaHora,
+        idPedido: numeroPedido,
+        nombreApellido: datosForm.nombreApellido,
+        telefonoWhatsApp: datosForm.telefono,
+        localidadProvincia: datosForm.localidad,
+        direccionCompleta: tipoEntrega === "envio" ? datosForm.direccion : "",
+        tipoEntrega: tipoEntrega || "",
+        metodoPago: metodoPago || "A coordinar",
+        nombreComercio: datosForm.empresa,
+        cuit: datosForm.cuit,
+        email: datosForm.email,
+        aclaraciones: datosForm.aclaraciones,
+        totalCajas,
+        detalleCajasTexto,
+        origen: "web_productos"
+      };
+
+      guardarPedidoEnSheets(datosParaSheets);
+
+      alert("Tu pedido fue recibido. En breve te contactaremos por email para confirmar disponibilidad.");
+
+      // 🔹 Después de enviar el pedido, vaciamos carrito y storage
+      vaciarCarrito();
+      localStorage.removeItem(STORAGE_KEY);
+      cerrarCarrito();
+    }
+
+    // ---------- ACORDEÓN BUSCADOR / GUÍA ----------
+    function togglePanel(idPanel, boton) {
+      const panel = document.getElementById(idPanel);
+      if (!panel || !boton) return;
+
+      const visible = panel.style.display !== "none" && panel.style.display !== "";
+      const arrow = boton.querySelector(".accordion-arrow");
+
+      if (visible) {
+        // Cerrar
+        panel.style.display = "none";
+        boton.style.background = "#e5e7eb";
+        boton.style.color = "#111827";
+        boton.style.boxShadow = "0 6px 10px rgba(148,163,184,0.35)";
+        if (arrow) arrow.textContent = "▼";
+      } else {
+        // Abrir
+        panel.style.display = "block";
+        boton.style.background = "linear-gradient(135deg,#22c55e,#16a34a)";
+        boton.style.color = "#ffffff";
+        boton.style.boxShadow = "0 10px 18px rgba(34,197,94,0.35)";
+        if (arrow) arrow.textContent = "▲";
+      }
+    }
+    // Normaliza texto para búsquedas: minúsculas y sin tildes
+    function normalizarBusqueda(str) {
+      return (str || "")
+        .toLowerCase()
+        .normalize("NFD")                // separa letras y acentos
+        .replace(/[\u0300-\u036f]/g, ""); // borra los acentos
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 🔹 Al cargar la página, recuperamos carrito guardado (si existe)
+      cargarCarritoStorage();
+      actualizarCarrito();  // esto también actualiza el FAB
+
+      const tarjetas      = document.querySelectorAll(".producto-card");
+      const botonesFiltro = document.querySelectorAll(".productos-filtro-btn");
+      const inputBuscador = document.getElementById("buscadorMedidas");
+
+      let filtroActivo      = "todos";
+      let terminoBusqueda   = "";
+
+      function coincideFiltro(card) {
+        if (filtroActivo === "todos") return true;
+        const usos = (card.dataset.usos || "").split(",");
+        return usos.includes(filtroActivo);
+      }
+
+      function coincideBusqueda(card) {
+        if (!terminoBusqueda) return true;
+        const texto = normalizarBusqueda(card.textContent || "");
+        return texto.includes(terminoBusqueda);
+      }
+
+      function aplicarFiltros() {
+        tarjetas.forEach(card => {
+          const visible = coincideFiltro(card) && coincideBusqueda(card);
+          card.style.display = visible ? "" : "none";
+        });
+      }
+
+      botonesFiltro.forEach(boton => {
+        boton.addEventListener("click", () => {
+          filtroActivo = boton.getAttribute("data-filtro");
+          botonesFiltro.forEach(b => b.classList.remove("active"));
+          boton.classList.add("active");
+          aplicarFiltros();
+        });
+      });
+
+      if (inputBuscador) {
+        inputBuscador.addEventListener("input", () => {
+          terminoBusqueda = normalizarBusqueda(inputBuscador.value.trim());
+          aplicarFiltros();
+        });
+      }
+      
+      aplicarFiltros();
+    });
+  </script>
+
+</body>
+</html>
