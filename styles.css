@@ -1948,3 +1948,47 @@ footer {
     margin: 0 auto 12px auto;
   }
 }
+/* ===== NAVBAR CENTRADO SOLO EN CELULAR (3 arriba, 2 abajo) ===== */
+@media (max-width: 768px) {
+
+  /* Logo + menú uno abajo del otro y centrados */
+  .navbar-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* El bloque de links: en fila, con salto de línea y centrado */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;           /* permite 3 arriba y 2 abajo */
+    justify-content: center;   /* centra el grupo entero */
+    gap: 8px 16px;             /* espacio entre botones */
+  }
+
+  /* Cada botón del menú */
+  .nav-links .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    text-align: center;
+  }
+}
+/* ===== FILTROS CENTRADOS SOLO EN CELULAR ===== */
+@media (max-width: 768px) {
+
+  .productos-filtros {
+    display: flex;
+    flex-wrap: wrap;          /* que puedan bajar a otra línea */
+    justify-content: center;  /* centrados en el medio */
+    gap: 8px 12px;            /* espacio entre botones */
+  }
+
+  .productos-filtros .productos-filtro-btn {
+    flex: 0 0 calc(33.33% - 12px); /* 3 botones por fila aproximado */
+    max-width: 130px;              /* que no se hagan gigantes */
+    text-align: center;
+  }
+}
