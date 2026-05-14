@@ -192,13 +192,21 @@ body {
 /* Caja de texto (título + descripción) superpuesta a la imagen */
 .slide-caption {
   position: absolute;
-  right: 10%;                        /* alejado del borde derecho */
-  top: 50%;
-  transform: translateY(-50%);       /* centro vertical */
-  max-width: 360px;
+  right: 5%;              /* 👈 más pegado al borde derecho */
+  top: 60%;
+  transform: translateY(-50%);
+  max-width: 320px;      /* 👈 un poco más angosto */
   text-align: right;
 }
+/* Mejora de legibilidad SOLO en el slider */
+.hero-slider .slide-caption h1 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
 
+.hero-slider .slide-caption p {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+ 
 .slide-caption h1 {
   font-size: 28px;
   font-weight: 800;
@@ -260,8 +268,6 @@ body {
   width: 18px;
   background: #22c55e;
 }
-
-
 
 /* -------------------
    TARJETAS GENERALES (cards blancas)
@@ -1389,6 +1395,7 @@ footer {
 .page-productos .opcion-card strong {
   display: block;
   margin-bottom: 4px;
+  text-align: center;
 }
 
 /* Hover de la tarjeta de opción */
@@ -1865,6 +1872,7 @@ footer {
     font-size: 15px;
   }
 }
+
 /* ===== Ajustes slider de INICIO en celular ===== */
 @media (max-width: 480px) {
 
@@ -1890,6 +1898,7 @@ footer {
     font-size: 13px;
   }
 }
+
 /* En pantallas chicas (celular) ocultamos el logo de arriba del footer */
 @media (max-width: 768px) {
   .footer-logo-top {
@@ -1900,25 +1909,25 @@ footer {
     display: block;
   }
 }
-/* ✅ Ajustes SOLO para celular */
+
+/* ✅ Footer centrado solo en celular */
 @media (max-width: 768px) {
 
-  /* Si ya tenés lo del logo-top, dejalo acá junto */
   .footer-logo-top {
     display: none;          /* ocultar logo de arriba en celu */
   }
 
   .footer-inner {
-    flex-direction: column; /* columnas una debajo de la otra */
-    align-items: center;    /* centrar horizontalmente */
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-main {
-    text-align: center;     /* centra todos los textos del bloque oscuro */
+    text-align: center;
   }
 
   .footer-column {
-    text-align: center;     /* títulos y párrafos centrados */
+    text-align: center;
     margin-bottom: 16px;
   }
 
@@ -1942,12 +1951,12 @@ footer {
     display: inline-block;
   }
 
-  /* Logo de abajo centrado */
   .footer-logo-bottom img {
     display: block;
     margin: 0 auto 12px auto;
   }
 }
+
 /* ===== NAVBAR CENTRADO SOLO EN CELULAR (3 arriba, 2 abajo) ===== */
 @media (max-width: 768px) {
 
@@ -1976,6 +1985,7 @@ footer {
     text-align: center;
   }
 }
+
 /* ===== FILTROS CENTRADOS SOLO EN CELULAR ===== */
 @media (max-width: 768px) {
 
@@ -1991,4 +2001,205 @@ footer {
     max-width: 130px;              /* que no se hagan gigantes */
     text-align: center;
   }
+}
+
+/* ===== MENÚ SUPERIOR ORDENADO EN CELULAR ===== */
+@media (max-width: 768px) {
+
+  /* La barra se apila en columna */
+  .navbar-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Contenedor de los links del menú */
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;          /* permite varias filas */
+    justify-content: center;  /* centra cada fila */
+    margin-left: 0;
+    margin-top: 8px;
+    gap: 4px 0;               /* espacio vertical entre filas */
+  }
+
+  /* Cada link ocupa 1/3 del ancho → 3 por fila */
+  .nav-link {
+    flex: 0 0 33.33%;         /* 3 por fila, y la segunda fila queda 2 centrados */
+    text-align: center;
+  }
+}
+
+/* ===== AJUSTE DEL TÍTULO EN EL NAVBAR (SOLO CELULAR) ===== */
+@media (max-width: 768px) {
+
+  /* Logo + textos uno abajo del otro y centrados */
+  .navbar-left {
+    flex-direction: column;    /* logo arriba, textos abajo */
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+
+  .navbar-brand {
+    font-size: 20px;           /* un poco más chico para que no se corte */
+    line-height: 1.1;
+    white-space: normal;       /* permite que el texto se parta en 2 líneas */
+  }
+
+  .navbar-sub {
+    font-size: 13px;
+  }
+}
+
+/* ===== AJUSTES SOLO PARA CELULAR - CONTACTO ===== */
+@media (max-width: 768px) {
+
+  .page-contacto .contact-card {
+    max-width: 100%;
+    margin: 32px auto;
+    padding: 24px 20px 32px;
+  }
+
+  .page-contacto .contact-data-block {
+    margin-top: 16px;
+  }
+
+  /* Icono + título + botón copiar en una fila,
+     y el valor pasa a la línea de abajo */
+  .page-contacto .contact-row {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .page-contacto .contact-icon {
+    margin-top: 2px;
+  }
+
+  .page-contacto .contact-label {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .page-contacto .copy-btn {
+    margin-left: auto; /* icono de copiar pegado a la derecha */
+  }
+
+  .page-contacto .contact-value {
+    flex-basis: 100%;  /* ocupa toda la línea de abajo */
+    margin-left: 26px; /* sangría para que quede debajo del texto */
+    margin-top: 2px;
+    text-align: left;
+  }
+}
+/* Ocultar botón de copiar solo en celular */
+@media (max-width: 768px) {
+  .page-contacto .copy-btn {
+    display: none;
+  }
+}
+/* ===== FOOTER: centrado simétrico + títulos alineados arriba (SOLO DESKTOP) ===== */
+@media (min-width: 769px) {
+
+  /* 2) Que los títulos (y todo el bloque) arranquen alineados arriba */
+  .footer-inner{
+    align-items: flex-start;
+  }
+
+  /* Los H4 no deben tener margen arriba (así quedan todos al mismo nivel) */
+  .footer-column h4{
+    margin-top: 0;
+  }
+
+  /* Mantener los logos centrados en vertical dentro del footer (aunque el grid esté "arriba") */
+  .footer-logo-side{
+    align-self: center;
+  }
+
+  /* 1) Simetría: acercar los logos hacia el bloque central */
+  .footer-inner .footer-logo-side:first-child{
+    justify-content: flex-end;   /* logo izquierdo hacia la derecha */
+  }
+
+  .footer-inner .footer-logo-side:last-child{
+    justify-content: flex-start; /* logo derecho hacia la izquierda */
+  }
+
+  /* 1) Simetría visual: el último bloque (MAPA DEL SITIO) alineado a la derecha */
+  .footer-inner .footer-column:nth-child(4){
+    text-align: right;
+  }
+}
+/* ===== FOOTER: mover TODO el bloque central junto (3 columnas) ===== */
+@media (min-width: 769px) {
+
+  /* IMPORTANTE: anulamos el cambio que movía solo "MAPA DEL SITIO" */
+  .footer-inner .footer-column:nth-child(4){
+    text-align: left;
+  }
+
+  /* Movemos las 3 columnas del medio juntas (como una sola unidad) */
+  .footer-inner .footer-column{
+    transform: translateX(34px); /* <- ajustá este número si querés 12px / 20px / 24px */
+  }
+}
+/* BACKDROP */
+.modal-confirmacion-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+
+.modal-confirmacion-backdrop.visible {
+  display: flex;
+}
+
+/* MODAL */
+.modal-confirmacion {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* TEXTO */
+.modal-confirmacion-texto {
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* BOTON WHATSAPP */
+.btn-whatsapp-modal {
+  display: block;
+  width: 100%;
+  background: #25D366;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+/* TEXTO CHICO */
+.modal-confirmacion-info {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 16px;
 }
