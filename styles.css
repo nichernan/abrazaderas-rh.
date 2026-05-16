@@ -1585,14 +1585,16 @@ footer {
   font-size: 44px;
   margin-bottom: 8px;
   font-weight: 800;
-  color: #000000;
+  color: #ffffff;
+  -webkit-text-stroke: 1.2px #000000;  /* contorno blanco para que se lea sobre la foto */
 }
 
 /* Subtítulo debajo del título principal del hero */
 .page-sobre-nosotros .about-hero-subtitle {
   font-size: 18px;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
+  -webkit-text-stroke: 1.2px #000000;  /* contorno blanco para que se lea sobre la foto */
 }
 
 /* Acordeones "Más información" (Historia, Calidad, etc.) */
