@@ -1585,7 +1585,7 @@ footer {
   font-size: 44px;
   margin-bottom: 8px;
   font-weight: 800;
-  color: #ffffff;
+  color: #000000;
   -webkit-text-stroke: 1.2px #000000;  /* contorno blanco para que se lea sobre la foto */
 }
 
@@ -1593,7 +1593,7 @@ footer {
 .page-sobre-nosotros .about-hero-subtitle {
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   -webkit-text-stroke: 1.2px #000000;  /* contorno blanco para que se lea sobre la foto */
 }
 
