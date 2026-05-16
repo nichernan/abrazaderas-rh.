@@ -1586,10 +1586,6 @@ footer {
   margin-bottom: 8px;
   font-weight: 800;
   color: #000000;
-
-  text-shadow:
-    0 2px 6px rgba(255,255,255,0.85),
-    0 0 2px rgba(255,255,255,0.9);
 }
 
 /* Subtítulo debajo del título principal del hero */
